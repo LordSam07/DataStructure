@@ -58,6 +58,31 @@ class LinkedList {
         newNode.next = after
     }
 
+    fun reverse(){
+
+        var i = head
+        var j = lastNode
+        var l = size - 2
+
+        while ( i != j && j!!.next != i){
+
+            val temp = i!!.data
+            i.data = j.data
+            j.data = temp
+
+            getAll()
+            println()
+
+            i = i.next
+
+            j = head
+            repeat(l){
+                j = j!!.next
+            }
+            l--
+        }
+    }
+
     fun getAt(index: Int): String{
         var currentNode = head
 
@@ -91,7 +116,7 @@ class LinkedList {
     }
 }
 
-class Node(val data: String, var next: Node?)
+class Node(var data: String, var next: Node?)
 
 fun main(){
 
@@ -102,14 +127,9 @@ fun main(){
     list.addLast("Payal")
     list.addFirst("lord")
     list.addBefore(3, "queen")
-    list.getAll()
 
-//    println(list.getAt(1))
-//    println(list.size)
-//
-//    list.removeAt(2)
-//
-//    println(list.getAt(0))
-//    println(list.getAt(1))
-//    println(list.size)
+    list.getAll()
+    println()
+    list.reverse()
+
 }

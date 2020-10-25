@@ -21,6 +21,7 @@ class Queue {
         var cn = front
         while (cn?.next != rear)
             cn = cn!!.next
+        println("Dequeue : ${rear!!.data}")
         rear = cn
         rear!!.next = null
     }
@@ -35,11 +36,11 @@ class Queue {
     }
 
     fun getFront(){
-        print("[${front!!.data}] ")
+        println("Front : [${front!!.data}] ")
     }
 
     fun getRear(){
-        print("[${rear!!.data}] ")
+        println("Rear : [${rear!!.data}] ")
     }
 }
 

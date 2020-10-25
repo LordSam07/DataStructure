@@ -23,7 +23,7 @@ class Stack {
             val cn = top
             top = top!!.down
             cn!!.down = null
-            println("Poped : ${cn.data}")
+            println("Popped : ${cn.data}")
         }
     }
 
